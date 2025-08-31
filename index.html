@@ -1,0 +1,36 @@
+def up():
+    if h.direction != "down":
+        h.direction = "up"
+
+def down():
+    if h.direction != "up":
+        h.direction = "down"
+
+def left():
+    if h.direction != "right":
+        h.direction = "left"
+
+def right():
+    if h.direction != "left":
+        h.direction = "right"
+
+# Movement function
+def move():
+    if h.direction == "up":
+        h.sety(h.ycor() + 20)
+    if h.direction == "down":
+        h.sety(h.ycor() - 20)
+    if h.direction == "left":
+        h.setx(h.xcor() - 20)
+    if h.direction == "right":
+        h.setx(h.xcor() + 20)
+
+# Key bindings
+sc.listen()
+sc.onkeypress(up, "Up")
+sc.onkeypress(down, "Down")
+sc.onkeypress(left, "Left")
+sc.onkeypress(right, "Right")
+
+# Snake body segments
+seg = []
